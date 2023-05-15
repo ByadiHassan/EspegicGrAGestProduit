@@ -1,4 +1,9 @@
 from produit import Produit
-p=Produit(10,'Stylo',10.5)
-p.id=11
-print(p.id,'   ',p.design,p.prix)
+
+try:
+    p=Produit(10,'Ecran',250)
+    p.afficher()
+except Exception as ex:
+    print(ex)
+
+
