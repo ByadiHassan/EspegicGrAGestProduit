@@ -12,8 +12,8 @@ class Produit:
         if id>0:
             self.__id=id
         else:
-            ex=Exception("Attention l'Id du produit doit être strictement positif !")
-            raise ex
+             raise Exception("Attention l'Id du produit doit être strictement positif !")
+          
 
     def getDesign(self):
         return self.__design
