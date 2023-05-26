@@ -1,0 +1,44 @@
+from os import system
+from produit import Produit
+class Clavier:
+    @staticmethod
+    def getString(msg):
+        return input(msg)
+    @staticmethod
+    def getValue(msg,f):
+        while True:
+            try:
+                return f(Clavier.getString(msg))               
+
+            except Exception as ex:
+                print(ex)
+                system('pause')
+                system('cls')
+
+    @staticmethod
+    def getInt(msg):
+        while True:
+            try:
+                return int(Clavier.getString(msg))               
+
+            except Exception as ex:
+                print(ex)
+                system('pause')
+                system('cls')
+
+    @staticmethod
+    def getFloat(msg):
+        while True:
+            try:
+                return float(Clavier.getString(msg))               
+
+            except Exception as ex:
+                print(ex)
+                system('pause')
+                system('cls')
+
+    @staticmethod
+    def getProduit():
+        return Produit(Clavier.getInt("Tapez l'id du produit : "),
+        Clavier.getString("Tapez la désignation du produit : "),
+        Clavier.getValue("Tapez le prix du produit : ",float))
