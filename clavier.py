@@ -4,17 +4,7 @@ class Clavier:
     @staticmethod
     def getString(msg):
         return input(msg)
-    @staticmethod
-    def getValue(msg,f):
-        while True:
-            try:
-                return f(Clavier.getString(msg))               
-
-            except Exception as ex:
-                print(ex)
-                system('pause')
-                system('cls')
-
+    
     @staticmethod
     def getInt(msg):
         while True:
@@ -36,9 +26,18 @@ class Clavier:
                 print(ex)
                 system('pause')
                 system('cls')
+    @staticmethod
+    def getValue(msg,f):
+        while True:
+            try:
+                return f(Clavier.getString(msg))            
+            except Exception as ex:
+                print(ex)
+                system('pause')
+                system('cls')
 
     @staticmethod
     def getProduit():
         return Produit(Clavier.getInt("Tapez l'id du produit : "),
         Clavier.getString("Tapez la désignation du produit : "),
-        Clavier.getValue("Tapez le prix du produit : ",float))
+        Clavier.getFloat("Tapez le prix du produit : "))

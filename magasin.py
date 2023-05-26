@@ -27,4 +27,15 @@ class Magasin:
         self.__produits=pickle.load(fichier)
         fichier.close()
 
+    def exists(self,id):
+        existance =False
+        for pr in self.__produits:
+            if pr.getId()==id:
+                existance =True
+                break
+        return existance            
 
+    def chercher(self,id):
+        for pr in self.__produits:
+            if pr.getId()==id:
+                return pr
