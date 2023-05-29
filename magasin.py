@@ -10,7 +10,10 @@ class Magasin:
         self.__produits=produits
 
     def ajouter(self,produit:Produit):
-        self.__produits.append(produit)
+        if not self.exists(produit.getId()):
+            self.__produits.append(produit)
+        else:
+            raise Exception("Attention cet id est déjà affecté à un autre produit !\n")
 
     def supprimer(self,produit:Produit):
         self.__produits.remove(produit)
